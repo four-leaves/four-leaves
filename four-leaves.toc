@@ -1,3 +1,0 @@
-\contentsline {chapter}{\numberline {1}\IeC {\textquestiondown }Qu\IeC {\'e} es GNU/Linux?}{4}{chapter.1}
-\contentsline {section}{\numberline {1.1}Subt\IeC {\'\i }tulo}{4}{section.1.1}
-\contentsline {chapter}{\numberline {2}Comandos b\IeC {\'a}sicos en GNU/Linux}{5}{chapter.2}
