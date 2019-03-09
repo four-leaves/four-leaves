@@ -1,61 +1,51 @@
-\documentclass[11pt, oneside]{book}
-\usepackage[colorlinks,citecolor=blue,linkcolor=red]{hyperref}
+\documentclass[11pt, a4paper, oneside]{book}
 
+%  == Font Palatine  ==
+\usepackage{ mathpazo }
+% ======================
+
+% == Hyperlinks ==
+\usepackage[colorlinks,citecolor=blue,linkcolor=red]{hyperref}
+% ================
+
+% === insertar Pdf ===
+\usepackage{ pdfpages }
+% ====================
+% == para insertar graficos (Png, Jpg, Pdf) ==
+\usepackage{ graphicx }
+% \graphicspath{{05_figures}} // ruta de imagenes
+% =============================================
+
+% == Cambia el nombre de index ==
 \renewcommand{\contentsname}{Contenido}
+% ================================
+
+% ==== Nuevo comando myCover ====
+\newcommand{\myCover}{
+   % agregando PDF
+  \includepdf{01_cover/Cover.pdf}
+  }
+% ==== Nuevo comando myCover ====
+\newcommand{\myBackCover}{
+   % agregando PDF
+  \includepdf{01_cover/Cover.pdf}
+  }
+% ======================= %
 
 \begin{document}
+\frontmatter
+  \myCover
+  \tableofcontents
 
-% ===== Título de portada ====
-\begin{titlepage}
-\raggedleft % Alinear todo a la derecha
-\vspace*{\baselineskip} %Espacios en blanco en la parte superior de la página
+\mainmatter
+  \include{./03_mainmatter/chapters/comandos-basicos}
+  \include{./03_mainmatter/chapters/comandos-basicos}
+  \include{./03_mainmatter/chapters/comandos-basicos}
+  \include{./03_mainmatter/chapters/comandos-basicos}
+  \include{./03_mainmatter/chapters/comandos-basicos}
+  \include{./03_mainmatter/chapters/comandos-basicos}
+  \include{./03_mainmatter/chapters/comandos-basicos}
 
-{\Large Franz Victorio \\ Carlos Aznarán \\ Freider Achic \\ Renzo Q. Amao \\ } \vspace*{0.167\textheight}
-
-
-\textbf{\LARGE  Guía de inicio }\\[\baselineskip]
-
-{{\Huge \bf Four Leaves}}\\[\baselineskip]
-
-{\large \bf \text{Organización}}
-
-\vfill %Espacio en blanco entre los títulos y el editor.
-
-{\large\bf Evenhold }
-\vspace*{3\baselineskip}
-
-\end{titlepage}
-% ======================= %
-\tableofcontents
-
-\chapter*{Prefacio}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-\chapter*{Prólogo}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-\chapter{¿Qué es GNU/Linux?}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\\
- \texttt{article} and \texttt{book} classes
-as well as to \texttt{report} class. In \texttt{article} class, however,
-the default position for the title information is at the top of
-the first text page rather than on a separate page. Also, it is
-not usual to request a table of contents with \texttt{article} class.
-
-\section{Subtítulo}
-Los siguientes comandos de sección están disponibles:
-\begin{quote}
- part \\
- chapter \\% \\ Fuerza una nueva linea
- section \\
- subsection \\
- subsubsection \\
- paragraph \\
- subparagraph
-\end{quote}% Fin del texto indentado.
-
-Pero tenga en cuenta que  a diferencia de las clases de \texttt{book} y \texttt{report},
-la clase de \texttt{article} no tiene un comando \texttt{chapter}.
-
-\chapter{Comandos básicos en GNU/Linux}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\backmatter
+  \myBackCover
 \end{document}
