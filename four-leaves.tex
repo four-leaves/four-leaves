@@ -1,51 +1,63 @@
-\documentclass[11pt, a4paper, oneside]{book}
+% arara: clean: {extensions: ['log','aux','fdb_latexmk','fls','ilg','synctex.gz','toc','out']}
+% arara: lualatex
+% arara: lualatex
+% arara: clean: {extensions: ['log','aux','fdb_latexmk','fls','ilg','synctex.gz','toc','out']}
+\documentclass[
+	11pt,
+	a4paper,
+	oneside
+]{book}
+\usepackage{ifluatex}
+%\usepackage{ifxetex}
+\ifluatex
+	\usepackage{mathpazo}
+	\usepackage{fontspec}
+	\setmainfont{TeX Gyre Pagella}
+  % other LuaTeX setup
+%\else
+%  \ifxetex
+%    \usepackage{fontspec}
+%    % other XeTeX setup
+\else
+	\usepackage[T1]{fontenc}
+	\usepackage{mathpazo}
+  % other font setup
+  %\fi
+\fi
+\usepackage{pdfpages}	% Insertar pdf
+\usepackage{graphicx}		% Insertar gráficos (png, jpg, pdf, eps)
+	\graphicspath{ {img} }
+\usepackage{lipsum}
+\usepackage[
+	colorlinks,
+	citecolor=blue,
+	linkcolor=red
+]{hyperref}						% Hipervínculos
 
-%  == Font Palatine  ==
-\usepackage{ mathpazo }
-% ======================
-
-% == Hyperlinks ==
-\usepackage[colorlinks,citecolor=blue,linkcolor=red]{hyperref}
-% ================
-
-% === insertar Pdf ===
-\usepackage{ pdfpages }
-% ====================
-% == para insertar graficos (Png, Jpg, Pdf) ==
-\usepackage{ graphicx }
-% \graphicspath{{05_figures}} // ruta de imagenes
-% =============================================
-
-% == Cambia el nombre de index ==
 \renewcommand{\contentsname}{Contenido}
-% ================================
-
-% ==== Nuevo comando myCover ====
+% === Nuevo comando myCover ===
 \newcommand{\myCover}{
-   % agregando PDF
-  \includepdf{01_cover/Cover.pdf}
-  }
-% ==== Nuevo comando myCover ====
+	% agregando PDF
+	\includepdf{01_cover/Cover.pdf}
+}
+% === Nuevo comando myCover ===
 \newcommand{\myBackCover}{
-   % agregando PDF
-  \includepdf{01_cover/Cover.pdf}
-  }
+	% agregando PDF
+	\includepdf{01_cover/Cover.pdf}
+}
 % ======================= %
 
 \begin{document}
+
 \frontmatter
-  \myCover
+	\myCover
+	\include{./01_cover/portrait}
   \tableofcontents
 
 \mainmatter
   \include{./03_mainmatter/chapters/comandos-basicos}
-  \include{./03_mainmatter/chapters/comandos-basicos}
-  \include{./03_mainmatter/chapters/comandos-basicos}
-  \include{./03_mainmatter/chapters/comandos-basicos}
-  \include{./03_mainmatter/chapters/comandos-basicos}
-  \include{./03_mainmatter/chapters/comandos-basicos}
-  \include{./03_mainmatter/chapters/comandos-basicos}
 
 \backmatter
   \myBackCover
+
 \end{document}
