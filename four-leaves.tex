@@ -1,62 +1,63 @@
 % arara: clean: {extensions: ['log','aux','fdb_latexmk','fls','ilg','synctex.gz','toc','out']}
-% arara: xelatex
+% arara: lualatex
+% arara: lualatex
 % arara: clean: {extensions: ['log','aux','fdb_latexmk','fls','ilg','synctex.gz','toc','out']}
-\documentclass[11pt, oneside]{book}
-\usepackage[colorlinks,citecolor=blue,linkcolor=red]{hyperref}
+\documentclass[
+	11pt,
+	a4paper,
+	oneside
+]{book}
+\usepackage{ifluatex}
+%\usepackage{ifxetex}
+\ifluatex
+	\usepackage{mathpazo}
+	\usepackage{fontspec}
+	\setmainfont{TeX Gyre Pagella}
+  % other LuaTeX setup
+%\else
+%  \ifxetex
+%    \usepackage{fontspec}
+%    % other XeTeX setup
+\else
+	\usepackage[T1]{fontenc}
+	\usepackage{mathpazo}
+  % other font setup
+  %\fi
+\fi
+\usepackage{pdfpages}	% Insertar pdf
+\usepackage{graphicx}		% Insertar gráficos (png, jpg, pdf, eps)
+	\graphicspath{ {img} }
 \usepackage{lipsum}
+\usepackage[
+	colorlinks,
+	citecolor=blue,
+	linkcolor=red
+]{hyperref}						% Hipervínculos
 
 \renewcommand{\contentsname}{Contenido}
+% === Nuevo comando myCover ===
+\newcommand{\myCover}{
+	% agregando PDF
+	\includepdf{01_cover/Cover.pdf}
+}
+% === Nuevo comando myCover ===
+\newcommand{\myBackCover}{
+	% agregando PDF
+	\includepdf{01_cover/Cover.pdf}
+}
+% ======================= %
 
 \begin{document}
 
-% ===== Título de portada ====
-\begin{titlepage}
-\raggedleft % Alinear todo a la derecha
-\vspace*{\baselineskip} % Espacios en blanco en la parte superior de la página
+\frontmatter
+	\myCover
+	\include{./01_cover/portrait}
+  \tableofcontents
 
-{\Large Franz Victorio \\ Carlos Aznarán \\ Freider Achic \\ Renzo Q. Amao \\ } \vspace*{0.167\textheight}
+\mainmatter
+  \include{./03_mainmatter/chapters/comandos-basicos}
 
-
-\textbf{\LARGE  Guía de inicio }\\[\baselineskip]
-
-{{\Huge \bf Four Leaves}}\\[\baselineskip]
-
-{\large \bf Organización}
-
-\vfill %Espacio en blanco entre los títulos y el editor.
-
-{\large\bf Evenhold }
-\vspace{3\baselineskip} % La versión * solo va cuando no hay texto en la hoja donde se edita.
-
-\end{titlepage}
-% ======================= %
-\tableofcontents
-
-\chapter*{Prefacio}
-\lipsum[1]
-
-\chapter*{Prólogo}
-\lipsum[1]
-
-\chapter{¿Qué es GNU/Linux?}
-\lipsum[1] \texttt{article} and \texttt{book} classes as well as to \texttt{report} class. In \texttt{article} class, however, the default position for the title information is at the top of the first text page rather than on a separate page. Also, it is not usual to request a table of contents with \texttt{article} class.
-
-\section{Subtítulo}
-
-Los siguientes comandos de sección están disponibles:
-\begin{quote}
- part \\
- chapter \\% \\ Fuerza una nueva linea
- section \\
- subsection \\
- subsubsection \\
- paragraph \\
- subparagraph
-\end{quote}% Fin del texto indentado.
-
-Pero tenga en cuenta que  a diferencia de las clases de \texttt{book} y \texttt{report}, la clase de \texttt{article} no tiene un comando \texttt{chapter}.
-
-\chapter{Comandos básicos en GNU/Linux}
-\lipsum[1]
+\backmatter
+  \myBackCover
 
 \end{document}
