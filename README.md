@@ -37,13 +37,15 @@
 
 Este proyecto se está trabajando a la par con **Four leaves D**, la distribución GNU/Linux que cuenta con los programas:
 
-* La colección SageMath, entre los componentes que destacan son TeX Live 2018, R, Python, Octave, Cython, GCC, GFORTRAN, IPython, Maxima, Numpy, SageTeX, Singular y Sympy, entre otros más.
-* Node Version Manager
-* VSCode
-* Discord
-* Zathura
-* Scribus
-* MongoDB
+* La colección [SageMath](https://www.sagemath.org/), entre los componentes que destacan son [TeX Live 2018](https://www.tug.org/texlive/), [R](https://www.r-project.org/), [Python](https://www.python.org/), [Octave](https://www.gnu.org/software/octave/), [Cython](https://cython.org/), [GCC](https://gcc.gnu.org/), [GFORTRAN](https://gcc.gnu.org/wiki/GFortran), [IPython](https://ipython.org/), [Maxima](http://maxima.sourceforge.net/), [Numpy](http://www.numpy.org/), [SageTeX](http://doc.sagemath.org/html/en/tutorial/sagetex.html), [Singular](https://www.singular.uni-kl.de/) y [SymPy](https://www.sympy.org/es/), entre otros más.
+* [Node Version Manager](https://github.com/creationix/nvm)
+* [VSCode](https://code.visualstudio.com/)
+* [Discord](https://discordapp.com/)
+* [Zathura](https://pwmt.org/projects/zathura/)
+* [Scribus](https://www.scribus.net/)
+* [GNU Emacs](https://www.gnu.org/software/emacs/)
+* [mongoDB](https://www.mongodb.com/)
+* [git](https://git-scm.com/)
 * y muchos más.
 
 ## Contenido
@@ -54,12 +56,11 @@ Este proyecto se está trabajando a la par con **Four leaves D**, la distribuci�
 
 Por favor visite la wiki del proyecto [aquí](https://github.com/evenhold/four-leaves/wiki) para más detalles. Por ejemplo:
 
-- ## [Getting started guide]()
-  - ### [Descargando el proyecto]()
-  - ### [Actualizando el proyecto]()
-  - ### [Colaborando con el proyecto]()
-  - ### [Construyendo el proyecto :green_book:]()
-
+- ## [Getting started guide](https://github.com/evenhold/four-leaves/wiki)
+  - ### [Descargando el proyecto](https://github.com/evenhold/four-leaves/wiki)
+  - ### [Actualizando el proyecto](https://github.com/evenhold/four-leaves/wiki)
+  - ### [Colaborando con el proyecto](https://github.com/evenhold/four-leaves/wiki)
+  - ### [Construyendo el proyecto :green_book:](https://github.com/evenhold/four-leaves/wiki)
 
 ## Empezando
 
@@ -103,4 +104,4 @@ Se espera que todos los que interactúen en los códigos de base de **Four leave
 
 ## Licencia
 
-**Four-leaves M** es lanzado bajo la [licencia MIT](https://opensource.org/licenses/MIT).
+**Four leaves M** es lanzado bajo la [licencia MIT](https://opensource.org/licenses/MIT).
