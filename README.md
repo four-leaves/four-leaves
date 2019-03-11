@@ -31,11 +31,11 @@
 
 **Four leaves M** es un manual de iniciación dirigido a los ingresantes de nuestra casa de estudio, cuyas características son las siguientes:
 
-* Menos de cien página.
-* Está escrito en un lenguaje sencillo.
-* Hecho con :heart:.
+* Contiene menos de cien páginas.
+* Está escrito en un lenguaje sencillo y ameno.
+* Hecho con :heart: por Four leaves.
 
-Este proyecto viene de la mano con **Four leaves D**, la distribución GNU/Linux que cuenta con los programas:
+Este proyecto se está trabajando a la par con **Four leaves D**, la distribución GNU/Linux que cuenta con los programas:
 
 * La colección SageMath, entre los componentes que destacan son TeX Live 2018, R, Python, Octave, Cython, GCC, GFORTRAN, IPython, Maxima, Numpy, SageTeX, Singular y Sympy, entre otros más.
 * Node Version Manager
@@ -44,7 +44,7 @@ Este proyecto viene de la mano con **Four leaves D**, la distribución GNU/Linux
 * Zathura
 * Scribus
 * MongoDB
-* y más.
+* y muchos más.
 
 ## Contenido
 1. [¿Qué es GNU/Linux?](#id1)
@@ -68,7 +68,7 @@ Por favor visite la wiki del proyecto [aquí](https://github.com/evenhold/four-l
 	$ sudo apt update
 	$ sudo apt install git-core
 	```
-2. En la línea de comandos, omita este paso si ya tiene configurado Git.
+2. En la línea de comandos, configure Git. Omita este paso si ya tiene configurado Git.
 	```sh
 	$ git config --global user.name "testuser"
 	$ git config --global user.email "testuser@example.com"
@@ -78,14 +78,14 @@ Por favor visite la wiki del proyecto [aquí](https://github.com/evenhold/four-l
 	```sh
 	$ git clone --recursive git@github.com:evenhold/four-leaves.git
 	```
-4. Cambie de directorio a `four-leaves` y construya el proyecto (elija solo una de las opciones):
+4. Cambie de directorio a `four-leaves` y construya el proyecto con alguna de las instrucciones:
 
         $ arara four-leaves	# Opción recomendada
         $ sh start.sh		# Otra opción
 
    Corra con `--help` or `-h` para ver las opciones.
 
-5. Entonces, podrá ver el pdf generado.
+5. Si no se muestra ningún error en pantalla, ¡genial! vea el pdf generado.
 
 6. Siga las pautas para comenzar a desarrollar su manual. Puede encontrar los siguientes recursos a mano:
     * [Empezando con LaTeX](https://es.wikibooks.org/wiki/Manual_de_LaTeX)
@@ -93,13 +93,13 @@ Por favor visite la wiki del proyecto [aquí](https://github.com/evenhold/four-l
 
 ## Contribuyendo
 
-¡Te animamos a contribuir a Ruby on Rails! Por favor, echa un vistazo a la
+¡Te animamos a contribuir a **Four leaves M**! Por favor, echa un vistazo a la
 [guía Contribuyendo a **Four leaves-M**](https://github.com/evenhold/four-leaves/wiki) para las pautas sobre cómo proceder. [¡Únete a nosotros!](https://github.com/evenhold/four-leaves/graphs/contributors)
 
-¿Tratando de reportar una posible vulnerabilidad o error de cpmpilación en **Four leaves M**? Consulte nuestra sección de [issues](https://github.com/evenhold/four-leaves/issues) para
+¿Tratando de reportar una posible vulnerabilidad o error de compilación en **Four leaves M**? Consulte nuestra sección de [issues](https://github.com/evenhold/four-leaves/issues) para
 entrar en contacto.
 
-Se espera que todos los que interactúen en los códigos de base de Rails y sus subproyectos, rastreadores de problemas, salas de chat y listas de correo sigan el [código de conducta](https://github.com/evenhold/four-leaves/CODE_OF_CONDUCT.md) de **Four leaves M**.
+Se espera que todos los que interactúen en los códigos de base de **Four leaves M** y sus subproyectos, rastreadores de problemas, salas de chat y listas de correo sigan el [código de conducta](https://github.com/evenhold/four-leaves/CODE_OF_CONDUCT.md) de **Four leaves M**.
 
 ## Licencia
 
