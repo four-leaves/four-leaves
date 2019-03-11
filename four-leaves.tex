@@ -1,7 +1,7 @@
 % arara: clean: {extensions: ['log','aux','fdb_latexmk','fls','ilg','synctex.gz','toc','out']}
 % arara: lualatex
 % arara: lualatex
-% arara: clean: {extensions: ['log','aux','fdb_latexmk','fls','ilg','synctex.gz','toc','out']}
+% arara: clean: {extensions: ['aux','fdb_latexmk','fls','ilg','synctex.gz','toc','out']}
 \documentclass[
 	11pt,
 	a4paper,
@@ -31,7 +31,8 @@
 \usepackage[
 	colorlinks,
 	citecolor=blue,
-	linkcolor=red
+	linkcolor=red,
+	pdfpagelabels
 ]{hyperref}						% Hipervínculos
 
 \renewcommand{\contentsname}{Contenido}
@@ -49,10 +50,16 @@
 
 \begin{document}
 
+\hypersetup{pageanchor=false}
+
 \frontmatter
 	\myCover
 	\include{./01_cover/portrait}
-  \tableofcontents
+	\include{./02_frontmatter/preface}
+	\include{./02_frontmatter/prologue}
+
+	\hypersetup{pageanchor=true}
+	\tableofcontents
 
 \mainmatter
   \include{./03_mainmatter/chapters/comandos-basicos}
