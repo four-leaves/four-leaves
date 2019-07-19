@@ -7,6 +7,12 @@
 	a4paper,
 	oneside
 ]{book}
+%Language
+% \usepackage[spanish, english]{babel}
+% \selectlanguage{spanish}
+
+\usepackage{tasks}
+
 \usepackage{ifluatex}
 %\usepackage{ifxetex}
 \ifluatex
@@ -35,11 +41,14 @@
 	pdfpagelabels
 ]{hyperref}						% Hipervínculos
 
+\renewcommand{\chaptername}{Título}
+% \renewcommand{\sectionname}{Capítulo}
 \renewcommand{\contentsname}{Contenido}
 % === Nuevo comando myCover ===
+\newcommand{\flae}{\textbf{FLAE} }
 \newcommand{\myCover}{
 	% agregando PDF
-	\includepdf{01_cover/Cover.pdf}
+	\includepdf{01_cover/escover.pdf}
 }
 % === Nuevo comando myCover ===
 \newcommand{\myBackCover}{
@@ -54,17 +63,21 @@
 
 \frontmatter
 	\myCover
-	\include{./01_cover/portrait}
-	\include{./02_frontmatter/preface}
-	\include{./02_frontmatter/prologue}
+	% \include{./01_cover/portrait}
+	% \include{./02_frontmatter/preface}
+	% \include{./02_frontmatter/prologue}
 
 	\hypersetup{pageanchor=true}
-	\tableofcontents
+	% \tableofcontents
 
 \mainmatter
-  \include{./03_mainmatter/chapters/comandos-basicos}
+  \include{./03_mainmatter/chapters/titulo-01}
+	\include{./03_mainmatter/chapters/titulo-02}
+	\include{./03_mainmatter/chapters/titulo-03}
+	\include{./03_mainmatter/chapters/titulo-04}
+	\include{./03_mainmatter/chapters/titulo-05}
 
-\backmatter
-  \myBackCover
+% \backmatter
+%   \myBackCover
 
 \end{document}
