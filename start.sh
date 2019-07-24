@@ -3,7 +3,7 @@ echo "|-------------------------|
 |-------------------------|
 
 "
-ls | grep *.tex 
+ls | grep tex
 echo "
 "
 echo "Please enter your  tex name"
