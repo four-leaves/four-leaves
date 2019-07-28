@@ -2,65 +2,54 @@
 % arara: lualatex
 % arara: lualatex
 % arara: clean: {extensions: ['aux','fdb_latexmk','fls','ilg','synctex.gz','toc','out']}
+%=========================================================================================
+
+
 \documentclass[
 	11pt,
 	a4paper,
 	oneside
 ]{book}
-%Language
-% \usepackage[spanish, english]{babel}
-% \selectlanguage{spanish}
+
+\usepackage[spanish, english]{babel}
+\selectlanguage{spanish}
+
 
 \usepackage{tasks}
-
 \usepackage{ifluatex}
-%\usepackage{ifxetex}
 \ifluatex
 	\usepackage{mathpazo}
 	\usepackage{fontspec}
 	\setmainfont{TeX Gyre Pagella}
-  % other LuaTeX setup
-%\else
-%  \ifxetex
-%    \usepackage{fontspec}
-%    % other XeTeX setup
 \else
 	\usepackage[T1]{fontenc}
 	\usepackage{mathpazo}
-  % other font setup
-  %\fi
 \fi
-\usepackage{pdfpages}	% Insertar pdf
-\usepackage{graphicx}		% Insertar gráficos (png, jpg, pdf, eps)
+\usepackage{pdfpages}
+\usepackage{graphicx}
 	\graphicspath{ {img} }
 \usepackage{lipsum}
 \usepackage[
+	pdfencoding=auto,
 	colorlinks,
 	citecolor=blue,
 	linkcolor=red,
 	pdfpagelabels
-]{hyperref}						% Hipervínculos
+]{hyperref}% Hipervínculos
 
 \renewcommand{\chaptername}{Título}
-% \renewcommand{\sectionname}{Capítulo}
 \renewcommand{\contentsname}{Contenido}
-% === Nuevo comando myCover ===
+
 \newcommand{\flae}{\textbf{FLAE} }
 \newcommand{\myCover}{
-	% agregando PDF
 	\includepdf{01_cover/escover.pdf}
 }
-% === Nuevo comando myCover ===
 \newcommand{\myBackCover}{
-	% agregando PDF
 	\includepdf{01_cover/Cover.pdf}
 }
-% ======================= %
 
 \begin{document}
-
 \hypersetup{pageanchor=false}
-
 \frontmatter
 	\myCover
 	% \include{./01_cover/portrait}
@@ -68,7 +57,7 @@
 	% \include{./02_frontmatter/prologue}
 
 	\hypersetup{pageanchor=true}
-	% \tableofcontents
+	\tableofcontents
 
 \mainmatter
   \include{./03_mainmatter/chapters/titulo-01}
@@ -77,7 +66,7 @@
 	\include{./03_mainmatter/chapters/titulo-04}
 	\include{./03_mainmatter/chapters/titulo-05}
 
-% \backmatter
-%   \myBackCover
+\backmatter
+  \myBackCover
 
 \end{document}
