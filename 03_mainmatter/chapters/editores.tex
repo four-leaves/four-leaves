@@ -1,6 +1,67 @@
 \chapter{Descripción de los editores de propósito general}
 
 \section{Vim}
+Para entrar al modo de comandos debemos presionar
+la tecla ESC seguida del símbolo : (dos puntos),
+y para entrar al modo de edición tenemos que
+presionar la tecla ESC seguida de alguna de las
+siguientes letras:
+
+a: entra en modo de edición y agrega el texto
+tipeado justro detrás de la posición del cursor.
+
+i: entra en modo de edición e inserta el texto
+justo delante de la posición actual del cursor.
+
+A: Añade el nuevo texto al final de la línea actual
+indicada por el cursor.
+
+I: inserta el texto al comienzo de la línea indicada
+por el cursor.
+
+O: inserta una nueva línea entre la línea inferior a la
+posición del cursor.
+
+* Para guardar el archivo y continuar editándolo entramos
+al modo comando y tipeamos el comando :w.
+
+* Para guardar el archivo y salir del editor entramos al
+modo comando y tipeamos el comando :wq.
+
+* Para salir del editor sin guardar el archivo, entramos al
+modo comando y tipeamos el comando :q!.
+
+El próximo paso es aprendernos los comandos para desplazarnos
+por el contenido de la ventana de Vi. Para todos los siguientes
+atajos es necesario presionar antes la tecla ESC para entrar
+en modo de comando:
+
+w: mover el cursor hacia la siguiente palabra.
+e: mover el cursor hacia el final de la palabra.
+b: mover el cursor hacia el comienzo de la palabra.
+): mover el cursor hacia el inicio de la próxima oración.
+(: mover el cursor hacia el inicio de la oración actual.
+\}: mover el cursor hacia el inicio del próximo párrafo.
+\{: mover el cursor hacia el inicio del párrafo actual.
+G: mover el cursor hacia el final del archivo.
+
+También disponemos de algunas combinaciones de teclas para
+desplazarnos por la ventana de edición:
+
+CTRL+F: mueve una pantalla completa hacia adelante.
+CTRL+B: mueve una pantalla completa hacia atrás.
+
+Ahora vamos a aprender a modificar nuestro texto. El comando
+más simple es r, que se encarga de reemplazar el carácter
+actual por otro indicado justo a continuación del comando
+(como por ejemplo rb). Para borrar caracteres disponemos del
+comando x, que acepta prefijos numéricos para definir cuántos
+caracteres se deben borrar (por ejemplo 10x). Por su parte. el
+comando d es un poco más versátil. Vemos algunas combinaciones:
+
+dw: borra desde la posición
+(como por ejemplo)
+CTRL + F
 
 \lipsum[1]
 \begin{wrapfigure}{r}{0.2\paperwidth}

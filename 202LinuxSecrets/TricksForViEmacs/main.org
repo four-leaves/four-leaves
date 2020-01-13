@@ -1,3 +1,0 @@
-Vi and emacs are the most popular editors of UNIX and Linux worlds.
-
-Their flexibility and size of functionalities ...
