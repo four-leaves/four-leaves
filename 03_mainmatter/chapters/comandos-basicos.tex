@@ -1,7 +1,13 @@
 \chapter{¿Qué es GNU/Linux?}
 
-	\lipsum[1] \texttt{article} and \texttt{book} classes as well as to \texttt{report} class. In \texttt{article} class, however, the default position for the title information is at the top of the first text page rather than on a separate page. Also, it is not usual to request a table  \texttt{article} class.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\lipsum[1]
+\begin{wrapfigure}{l}{0.25\paperwidth}
+	\centering
+	\includesvg[width=0.24\paperwidth]{./img/gnu}
+\end{wrapfigure}
+\lipsum[1]
+
+	\texttt{article} and \texttt{book} classes as well as to \texttt{report} class. In \texttt{article} class, however, the default position for the title information is at the top of the first text page rather than on a separate page. Also, it is not usual to request a table  \texttt{article} class.
 \section{Subtítulo}
 
 Los siguientes comandos de sección están disponibles:
@@ -18,4 +24,101 @@ Los siguientes comandos de sección están disponibles:
 Pero tenga en cuenta que  a diferencia de las clases de \texttt{book} y \texttt{report}, la clase de \texttt{article} no tiene un comando \texttt{chapter}.
 
 \chapter{Comandos básicos en GNU/Linux}
-	\lipsum[1]
+
+\lipsum[1]
+\begin{wrapfigure}{r}{0.25\paperwidth}
+	\centering
+	\includegraphics[width=0.24\paperwidth]{./img/linux/linux}
+\end{wrapfigure}
+\lipsum[1]
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=0.2\paperwidth]{./img/bash}
+	\includegraphics[width=0.2\paperwidth]{./img/zshell}
+	\includegraphics[width=0.2\paperwidth]{./img/ohmyzsh}
+\end{figure}
+
+
+\section{Knowing your OS}
+% TODO: uname, neofetch
+
+\section{Escritorios}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=0.2\paperwidth]{./img/desktops/budgie}
+	\includegraphics[width=0.2\paperwidth]{./img/desktops/cinnamon}
+	\includesvg[width=0.2\paperwidth]{./img/desktops/kde}
+	\includegraphics[width=0.2\paperwidth]{./img/desktops/gnome}
+	\includesvg[width=0.2\paperwidth]{./img/desktops/plasma}
+	\includegraphics[width=0.2\paperwidth]{./img/desktops/lxde}
+	\includegraphics[width=0.2\paperwidth]{./img/desktops/lxqt}
+	\includegraphics[width=0.2\paperwidth]{./img/desktops/mate}
+	\includegraphics[width=0.2\paperwidth]{./img/desktops/xfce}
+\end{figure}
+
+\subsection{Distribuciones}
+
+\begin{figure}[ht!]
+	\centering
+	\includesvg[width=0.2\paperwidth]{./img/linux/alpine}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/android}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/archlinux}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/asteroidos}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/centos}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/chrome}
+	\includesvg[width=0.2\paperwidth]{./img/linux/clearlinux}
+	\includesvg[width=0.2\paperwidth]{./img/linux/debian}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/kali}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/kaos}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/libreelec}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/solus}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/elementary}
+	\includesvg[width=0.2\paperwidth]{./img/linux/uos}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/ubuntu}
+	\includesvg[width=0.2\paperwidth]{./img/linux/sailfish}
+	\includesvg[width=0.2\paperwidth]{./img/linux/mx}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/pisi}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/mageia}
+	\includesvg[width=0.2\paperwidth]{./img/linux/tails}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/gentoo}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/deepin}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/fedora}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/redhat}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/raspbian}
+	\includesvg[width=0.2\paperwidth]{./img/linux/opensuse}
+	\includegraphics[width=0.2\paperwidth]{./img/linux/manjaro}
+\end{figure}
+
+\begin{landscape}
+\begin{table}[ht!]
+	\caption{Comparación de la línea de comando del gestión de software (fuente: \url{wiki.archlinux.org})}
+	\centering
+	\begin{tabular}{@{} p{110pt}:p{100pt}:l:p{102pt}:l @{}}
+		\toprule
+		Acción & Arch & Red Hat/Fedora & Debian/Ubuntu & SLES/openSUSE
+		\tabularnewline
+		\midrule
+		Instala un paquete por su nombre. & \lstinline|pacman -S| & \lstinline|dnf install| & \lstinline|apt install| & \lstinline|zypper install|
+		\tabularnewline
+		Elimina un paquete por su nombre. & \lstinline|pacman -Rs| & \lstinline|dnf remove| & \lstinline|apt remove| & \lstinline|zypper remove|
+		\tabularnewline
+		Busca un paquete por su nombre. & \lstinline|pacman -Ss| & \lstinline|dnf search| & \lstinline|apt search| & \lstinline|zypper search|
+		\tabularnewline
+		Actualiza los paquetes. & \lstinline|pacman -Syu| & \lstinline|dnf upgrade| & \lstinline|apt update &&|\newline \lstinline|apt upgrade| & \lstinline|zypper update|
+		\tabularnewline
+		Limpia la memoria\newline caché local. & \lstinline|pacman -Scc| & \lstinline|dnf clean all| & \lstinline|apt autoclean| & \lstinline|zypper clean|
+		\tabularnewline
+		Elimina dependencias innecesarias. & \lstinline|pacman -Rsn|\newline \lstinline|$(pacman -Qdtq)| & \lstinline|dnf autoremove| & \lstinline|apt autoremove| & \lstinline|zypper rm -u|
+		\tabularnewline
+		Muestra información\newline sobre un paquete. & \lstinline|pacman -Si| & \lstinline|dnf info| & \lstinline|apt show| & \lstinline|zypper info|
+		\tabularnewline
+		Lista de paquetes\newline instalados. & \lstinline|pacman -Q| & \lstinline|dnf list installed| & \lstinline|apt list --installed| & \lstinline|zypper search|\newline \lstinline|--installed-only|
+		\tabularnewline
+		Registra las acciones tomadas por el gestor de software. & \lstinline|/var/log/pacman.log| & \lstinline|dnf history| & \lstinline|/var/log/dpkg.log| & \lstinline|/var/log/zypp/history|
+		\tabularnewline
+		\bottomrule
+	\end{tabular}
+\end{table}
+\end{landscape}

@@ -1,7 +1,21 @@
-% arara: clean: {extensions: ['log','aux','fdb_latexmk','fls','ilg','synctex.gz','toc','out']}
-% arara: lualatex
-% arara: lualatex
-% arara: clean: {extensions: ['aux','fdb_latexmk','fls','ilg','synctex.gz','toc','out']}
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['log','aux','fdb_latexmk','fls','ilg','synctex.gz',
+% arara: --> 'toc','out','bbl','bcf','blg','run.xml']
+% arara: --> }
+% arara: lualatex: { shell: yes }
+% arara: biber
+%! arara: lualatex: {
+%! arara: --> shell: yes,
+%! arara: --> synctex: yes,
+%! arara: --> interaction: batchmode
+%! arara: --> }
+% arara: lualatex: { shell: true, interaction: nonstopmode }
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['log','aux','fdb_latexmk','fls','ilg','synctex.gz',
+% arara: --> 'toc','out','bbl','bcf','blg','run.xml']
+% arara: --> }
 %=========================================================================================
 
 
@@ -9,11 +23,11 @@
 	11pt,
 	a4paper,
 	oneside
-]{book}
+]{scrbook}
 
-\usepackage[spanish, english]{babel}
+\usepackage[english, spanish,es-sloppy]{babel}
 \selectlanguage{spanish}
-
+\spanishdatedel
 
 \usepackage{tasks}
 \usepackage{ifluatex}
@@ -28,7 +42,44 @@
 \usepackage{pdfpages}
 \usepackage{graphicx}
 	\graphicspath{ {img} }
+
+\usepackage{svg}
+\usepackage{booktabs}
+%\usepackage{longtable}
+\usepackage{arydshln}
+\usepackage{pdflscape}
+\usepackage{wrapfig}
 \usepackage{lipsum}
+
+\usepackage{listings}
+\usepackage{lstfiracode} % https://ctan.org/pkg/lstfiracode
+%\lstset{
+%	language=C++,
+%	style=FiraCodeStyle,   % Use predefined FiraCodeStyle
+%	basicstyle=\ttfamily,   % Use \ttfamily for source code listings
+%	commentstyle=\color{orange},
+%	moreliterate=
+%	{;;}{{;;}}2
+%	{///}{{///}}3
+%}
+\lstset{
+	language=bash,
+	style=FiraCodeStyle,
+	basicstyle=\footnotesize\ttfamily,
+	showstringspaces=false
+}
+\newcommand*\lstinputpath[1]{\lstset{inputpath=#1}}
+
+\usepackage[
+	backend = biber,
+	style = numeric,
+	defernumbers = true,
+	sorting = ynt,
+	maxbibnames = 4,
+	maxcitenames = 4
+]{biblatex}
+\addbibresource{04_backmatter/references.bib}
+
 \usepackage[
 	pdfencoding=auto,
 	colorlinks,
@@ -37,36 +88,44 @@
 	pdfpagelabels
 ]{hyperref}% Hipervínculos
 
-\renewcommand{\chaptername}{Título}
-\renewcommand{\contentsname}{Contenido}
 
+\renewcommand{\spanishchaptername}{Título}
+\renewcommand{\spanishcontentsname}{Contenido}
+
+\newcommand{\MVAt}{{\usefont{U}{mvs}{m}{n}\symbol{`@}}}
 \newcommand{\flae}{\textbf{FLAE} }
 \newcommand{\myCover}{
-	\includepdf{01_cover/escover.pdf}
+	\includepdf{01_cover/Cover.pdf}
 }
 \newcommand{\myBackCover}{
-	\includepdf{01_cover/Cover.pdf}
+	\includepdf{01_cover/backcover.pdf}
 }
 
 \begin{document}
 \hypersetup{pageanchor=false}
 \frontmatter
 	\myCover
-	% \include{./01_cover/portrait}
-	% \include{./02_frontmatter/preface}
-	% \include{./02_frontmatter/prologue}
+	\setcounter{page}{0}
+	\include{./01_cover/portrait}
+	\include{./02_frontmatter/preface}
+	\include{./02_frontmatter/prologue}
 
 	\hypersetup{pageanchor=true}
 	\tableofcontents
 
 \mainmatter
-  \include{./03_mainmatter/chapters/titulo-01}
-	\include{./03_mainmatter/chapters/titulo-02}
-	\include{./03_mainmatter/chapters/titulo-03}
-	\include{./03_mainmatter/chapters/titulo-04}
-	\include{./03_mainmatter/chapters/titulo-05}
+	\include{./03_mainmatter/chapters/comandos-basicos}
+	\include{./03_mainmatter/chapters/git}
+	\include{./03_mainmatter/chapters/editores}
+	\include{./03_mainmatter/chapters/latex}
+	\include{./03_mainmatter/chapters/desarrollo}
+	\include{./03_mainmatter/chapters/preprocesadores}
+	\include{./03_mainmatter/chapters/node}
+	\include{./03_mainmatter/chapters/backend}
+	\include{./03_mainmatter/chapters/algoritmos}
 
 \backmatter
-  \myBackCover
+	\include{./04_backmatter/references}
+	\myBackCover
 
 \end{document}

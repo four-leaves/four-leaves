@@ -1,0 +1,72 @@
+% arara: clean: {extensions: ['log','aux','fdb_latexmk','fls','ilg','synctex.gz','toc','out']}
+% arara: lualatex
+% arara: lualatex
+% arara: clean: {extensions: ['aux','fdb_latexmk','fls','ilg','synctex.gz','toc','out']}
+%=========================================================================================
+
+
+\documentclass[
+	11pt,
+	a4paper,
+	oneside
+]{book}
+
+\usepackage[spanish, english]{babel}
+\selectlanguage{spanish}
+
+
+\usepackage{tasks}
+\usepackage{ifluatex}
+\ifluatex
+	\usepackage{mathpazo}
+	\usepackage{fontspec}
+	\setmainfont{TeX Gyre Pagella}
+\else
+	\usepackage[T1]{fontenc}
+	\usepackage{mathpazo}
+\fi
+\usepackage{pdfpages}
+\usepackage{graphicx}
+	\graphicspath{ {img} }
+\usepackage{lipsum}
+\usepackage[
+	pdfencoding=auto,
+	colorlinks,
+	citecolor=blue,
+	linkcolor=red,
+	pdfpagelabels
+]{hyperref}% Hipervínculos
+
+\renewcommand{\chaptername}{Título}
+\renewcommand{\contentsname}{Contenido}
+
+\newcommand{\flae}{\textbf{FLAE} }
+\newcommand{\myCover}{
+	\includepdf{escover.pdf}
+}
+\newcommand{\myBackCover}{
+	\includepdf{escover.pdf}
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\frontmatter
+	\myCover
+	% \include{./01_cover/portrait}
+	% \include{./02_frontmatter/preface}
+	% \include{./02_frontmatter/prologue}
+
+	\hypersetup{pageanchor=true}
+	\tableofcontents
+
+\mainmatter
+  \include{./titulos/titulo-01}
+	\include{./titulos/titulo-02}
+	\include{./titulos/titulo-03}
+	\include{./titulos/titulo-04}
+	\include{./titulos/titulo-05}
+
+\backmatter
+  \myBackCover
+
+\end{document}
