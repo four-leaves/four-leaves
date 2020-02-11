@@ -89,18 +89,20 @@ donde `testuser` es el nombre de su usuario en GitHub y `testuser@example.com` e
 	[me@four-leaves ~]$ sh start.sh	# Otra opción
 	```
 Ejecute `start.sh` con `--help` or `-h` para ver las opciones de ayuda.
+
 5. Si no se muestra ningún error en pantalla, ¡genial! vea el [`four-leaves.pdf`](./four-leaves-M.pdf) generado.
+
 6. Siga las pautas para comenzar a desarrollar su manual. Puede encontrar los siguientes recursos a mano:
-	* [Empezando con LaTeX](https://es.wikibooks.org/wiki/Manual_de_LaTeX)
-	* [Proyecto LaTeX](https://www.latex-project.org/)
+* [Empezando con LaTeX](https://es.wikibooks.org/wiki/Manual_de_LaTeX)
+* [Proyecto LaTeX](https://www.latex-project.org/)
 
 ## Contribuyendo
 
-¡Te animamos a contribuir a **Four leaves M**! Por favor, echa un vistazo a la
-[guía Contribuyendo a **Four leaves-M**](https://github.com/evenhold/four-leaves/wiki) para las pautas sobre cómo proceder. [¡Únete a nosotros!](https://github.com/evenhold/four-leaves/graphs/contributors)
+¡Te animamos a contribuir a **Four leaves M**! Por favor, echa un vistazo a las guías:
+* [Contribuyendo con **Four leaves-M**](https://github.com/evenhold/four-leaves/wiki) para conocer las pautas sobre cómo proceder.
+* [¡Únete a nosotros!](https://github.com/evenhold/four-leaves/graphs/contributors).
 
-¿Tratando de reportar una posible vulnerabilidad o error de compilación en **Four leaves M**? Consulte nuestra sección de [issues](https://github.com/evenhold/four-leaves/issues) para
-entrar en contacto.
+¿Tratando de reportar una posible vulnerabilidad o error de compilación en **Four leaves M**? Consulte nuestra sección de [issues](https://github.com/evenhold/four-leaves/issues) para entrar en contacto.
 
 Se espera que todos los que interactúen en los códigos de base de **Four leaves M** y sus subproyectos, rastreadores de problemas, salas de chat y listas de correo sigan el [código de conducta](https://github.com/evenhold/four-leaves/CODE_OF_CONDUCT.md) de **Four leaves M**.
 
