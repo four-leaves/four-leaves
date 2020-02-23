@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/zsh
 
 opcion=1 # Ponemos esta opción en 1 para que el ciclo se cumpla la primera vez.
 

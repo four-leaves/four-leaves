@@ -1,0 +1,20 @@
+\documentclass{article}
+
+\usepackage[most]{tcolorbox}
+
+\newtcblisting{commandshell}{
+	colback=black,
+	colupper=white,
+	colframe=yellow!75!black,
+	listing only,
+	listing options={language=sh},
+	every listing line={\textcolor{red}{\small\ttfamily\bfseries [carlosal1015@Oromion \textasciitilde]\$}}
+}
+
+\begin{document}
+\begin{commandshell}
+ls -al
+cd /usr/lib
+rm -rf *
+\end{commandshell}
+\end{document}

@@ -1,5 +1,6 @@
-#!/bin/zsh
+#!/usr/bin/zsh
 
-variable=`ls`
-
+variable=`ls -l`
 echo $variable
+
+echo {1..15}.sh

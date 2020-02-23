@@ -16,92 +16,13 @@
 % arara: --> ['log','aux','fdb_latexmk','fls','ilg','synctex.gz',
 % arara: --> 'toc','out','bbl','bcf','blg','run.xml']
 % arara: --> }
-%=========================================================================================
 
-
-\documentclass[
-	11pt,
-	a4paper,
-	oneside
-]{scrbook}
-
-\usepackage[english, spanish,es-sloppy]{babel}
-\selectlanguage{spanish}
-\spanishdatedel
-
-\usepackage{tasks}
-\usepackage{ifluatex}
-\ifluatex
-	\usepackage{mathpazo}
-	\usepackage{fontspec}
-	\setmainfont{TeX Gyre Pagella}
-\else
-	\usepackage[T1]{fontenc}
-	\usepackage{mathpazo}
-\fi
-\usepackage{pdfpages}
-\usepackage{graphicx}
-	\graphicspath{ {img} }
-
-\usepackage{svg}
-\usepackage{booktabs}
-%\usepackage{longtable}
-\usepackage{arydshln}
-\usepackage{pdflscape}
-\usepackage{wrapfig}
-\usepackage{lipsum}
-
-\usepackage{listings}
-\usepackage{lstfiracode} % https://ctan.org/pkg/lstfiracode
-%\lstset{
-%	language=C++,
-%	style=FiraCodeStyle,   % Use predefined FiraCodeStyle
-%	basicstyle=\ttfamily,   % Use \ttfamily for source code listings
-%	commentstyle=\color{orange},
-%	moreliterate=
-%	{;;}{{;;}}2
-%	{///}{{///}}3
-%}
-\lstset{
-	language=bash,
-	style=FiraCodeStyle,
-	basicstyle=\footnotesize\ttfamily,
-	showstringspaces=false
-}
-\newcommand*\lstinputpath[1]{\lstset{inputpath=#1}}
-
-\usepackage[
-	backend = biber,
-	style = numeric,
-	defernumbers = true,
-	sorting = ynt,
-	maxbibnames = 4,
-	maxcitenames = 4
-]{biblatex}
-\addbibresource{04_backmatter/references.bib}
-
-\usepackage[
-	pdfencoding=auto,
-	colorlinks,
-	citecolor=blue,
-	linkcolor=red,
-	pdfpagelabels
-]{hyperref}% Hipervínculos
-
-
-\renewcommand{\spanishchaptername}{Título}
-\renewcommand{\spanishcontentsname}{Contenido}
-
-\newcommand{\MVAt}{{\usefont{U}{mvs}{m}{n}\symbol{`@}}}
-\newcommand{\flae}{\textbf{FLAE} }
-\newcommand{\myCover}{
-	\includepdf{01_cover/Cover.pdf}
-}
-\newcommand{\myBackCover}{
-	\includepdf{01_cover/backcover.pdf}
-}
+\input{header} % packages, shortcuts, page format etc.
 
 \begin{document}
+
+\nocite{*} % cite all the references
+
 \hypersetup{pageanchor=false}
 \frontmatter
 	\myCover
@@ -114,14 +35,17 @@
 	\tableofcontents
 
 \mainmatter
+	\part{Primera parte}
 	\include{./03_mainmatter/chapters/comandos-basicos}
 	\include{./03_mainmatter/chapters/git}
 	\include{./03_mainmatter/chapters/editores}
 	\include{./03_mainmatter/chapters/latex}
+	\part{Segunda parte}
 	\include{./03_mainmatter/chapters/desarrollo}
 	\include{./03_mainmatter/chapters/preprocesadores}
 	\include{./03_mainmatter/chapters/node}
 	\include{./03_mainmatter/chapters/backend}
+	\part{Tercera parte}
 	\include{./03_mainmatter/chapters/algoritmos}
 
 \backmatter

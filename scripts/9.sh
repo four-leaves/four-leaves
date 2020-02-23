@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/zsh
 
 echo "1. Ejecutar el comando ls."
 echo "2. Ejecutar el comando free."
@@ -7,7 +7,6 @@ echo "4. Crear un nuevo usuario."
 echo "5. Salir."
 
 read -p "Ingrese una opción: " OPCION
-
 
 case $OPCION in
     1) ls ;;

@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/zsh
 
 imprimir(){
     echo -n "Este mensaje es devuelto por la función imprimir():"

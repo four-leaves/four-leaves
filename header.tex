@@ -1,0 +1,89 @@
+\documentclass[
+	11pt,
+	a4paper,
+	oneside
+]{scrbook}
+
+\usepackage[english, spanish,es-sloppy]{babel}
+\selectlanguage{spanish}
+\spanishdatedel
+
+\usepackage{tasks}
+\usepackage{ifluatex}
+\ifluatex
+	\usepackage{mathpazo}
+	\usepackage{fontspec}
+	\setmonofont{Fira Code}[
+	Contextuals=Alternate  % Activate the calt feature
+	]
+	\setmainfont{TeX Gyre Pagella}
+\else
+	\usepackage[T1]{fontenc}
+	\usepackage{mathpazo}
+\fi
+\usepackage{pdfpages}
+\usepackage{graphicx}
+	\graphicspath{ {img} }
+
+\usepackage{svg}
+\usepackage{booktabs}
+%\usepackage{longtable}
+\usepackage{arydshln}
+\usepackage{pdflscape}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+
+%\usepackage{titlesec}
+\KOMAoptions{toc=chapterentrydotfill}
+
+\usepackage{listings}
+\usepackage{lstfiracode} % https://ctan.org/pkg/lstfiracode
+\lstdefinestyle{cpp}{
+	language=C++,
+	style=FiraCodeStyle,   % Use predefined FiraCodeStyle
+	basicstyle=\ttfamily,   % Use \ttfamily for source code listings
+	commentstyle=\color{orange},
+	tabsize=2,
+	moreliterate=
+	{;;}{{;;}}2
+	{///}{{///}}3
+}
+\lstdefinestyle{bash}{
+	language=bash,
+	style=FiraCodeStyle,
+	basicstyle=\footnotesize\ttfamily,
+	showstringspaces=false,
+	tabsize=2
+}
+\newcommand*\lstinputpath[1]{\lstset{inputpath=#1}}
+
+\usepackage[
+	backend = biber,
+	style = numeric,
+	defernumbers = true,
+	sorting = ynt,
+	maxbibnames = 4,
+	maxcitenames = 4
+]{biblatex}
+\addbibresource{04_backmatter/references.bib}
+
+\usepackage[
+	pdfencoding=auto,
+	colorlinks,
+	citecolor=blue,
+	linkcolor=red,
+	pdfpagelabels
+]{hyperref}% Hipervínculos
+
+
+\renewcommand{\spanishchaptername}{Título}
+\renewcommand{\spanishcontentsname}{Contenido}
+
+\newcommand{\MVAt}{{\usefont{U}{mvs}{m}{n}\symbol{`@}}}
+\newcommand{\flae}{\textbf{FLAE} }
+\newcommand{\myCover}{
+	\includepdf{01_cover/Cover.pdf}
+}
+\newcommand{\myBackCover}{
+	\includepdf{01_cover/backcover.pdf}
+}
