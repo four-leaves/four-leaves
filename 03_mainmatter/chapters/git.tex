@@ -9,40 +9,42 @@
 \lipsum[1]
 
 \begin{description}
-	\item[Repositorio] Es una base de datos que contiene toda la información acerca de las versiones de los archivos en un proyecto, ubicado en una carpeta oculta \lstinline|.git|.
+	\item[Repositorio] Es una base de datos que contiene toda la información acerca de las versiones de los archivos en un proyecto, ubicado en una carpeta oculta \mintinline{console}{.git}.
 	\item[Confirmación] Instantánea global de todos los archivos del proyecto con descripción de los cambios con respecto a la versión anterior.
-	\item[Rama] Secuencia de commits que describe una rama (línea) de desarrollo. Un repositorio puede contener más de uno. La rama estándar se llama \lstinline|master|.
+	\item[Rama] Secuencia de commits que describe una rama (línea) de desarrollo. Un repositorio puede contener más de uno. La rama estándar se llama \mintinline{console}{master}.
 	\item[Tag] Nombre persistente (identificador) para un commit, por ejemplo, cuando hace un lanzamiento público.
 \end{description}
 
 Antes de empezar a usar git, debemos tener instalado el sistema de control de versiones.
-\begin{lstlisting}
+
+\begin{minted}{console}
 four-leaves@me:~$ sudo apt update
 four-leaves@me:~$ sudo apt install git-core
-\end{lstlisting}
+\end{minted}
+
 Muy bien, ahora dos cosas deben ser configuradas:
-\begin{lstlisting}
+\begin{minted}{console}
 four-leaves@me:~$ git config --global user.name "testuser"
 four-leaves@me:~$ git config --global user.email "testuser@example.com"
-\end{lstlisting}
+\end{minted}
 %TODO: Nota: bashrc, bashprofile
 
 Cree un repositorio git ingresando lo siguiente en el directorio superior del proyecto:
-\begin{lstlisting}
+\begin{minted}{console}
 four-leaves@me:~$ git init miProyecto
 Initialized empty Git repository in ~/miProyecto.git/
-\end{lstlisting}
+\end{minted}
 Esto ha creado un repositorio vacío, todavía no hay confirmaciones:
-\begin{lstlisting}
+\begin{minted}{console}
 four-leaves@me:~$ git status
 On branch master
 
 No commits yet
 
 nothing to commit (create/copy files and use "git add" to track)
-\end{lstlisting}
+\end{minted}
 % TODO: Explicar git remote
-\begin{lstlisting}
+\begin{minted}{console}
 .git
 ├── branches
 ├── config
@@ -71,7 +73,7 @@ nothing to commit (create/copy files and use "git add" to track)
 └── tags
 
 9 directories, 16 files
-\end{lstlisting}
+\end{minted}
 
 \subsection{Confirmaciones}
 Una confirmación contiene
@@ -82,7 +84,7 @@ Una confirmación contiene
 	\item una lista de cambios.
 	\item una lista de referencias a confirmaciones principales.
 \end{itemize}
-Las confirmaciones son identificadas usando un hash (suma de verificación) de su contenido, por ejemplo \lstinline|5cd006a1c044b786ea8196636cd0b62e296dbbe5|.
+Las confirmaciones son identificadas usando un hash (suma de verificación) de su contenido, por ejemplo \mintinline{console}{5cd006a1c044b786ea8196636cd0b62e296dbbe5}.
 
 Los hash de confirmación pueden abreviarse siempre que la abreviatura sea única.
 
@@ -93,8 +95,8 @@ Las confirmaciones no pueden cambiar: contenido diferente $\Rightarrow$ valor ha
 \begin{itemize}
 	\item Una rama es una línea de desarrollo dentro de un repositorio.
 	\item Los repositorios pueden contener un número arbitrario de ramas.
-	\item \lstinline|git status| puede decirle en qué rama se encuentra.
-	\item Una rama siempre apunta a un \lstinline|commit|.
+	\item \mintinline{console}{git status} puede decirle en qué rama se encuentra.
+	\item Una rama siempre apunta a un \mintinline{console}{commit}.
 	\item La creación de una nueva confirmación guarda la confirmación actual como principal y la rama luego apunta la nueva confirmación.
 \end{itemize}
 
@@ -107,7 +109,7 @@ Las confirmaciones no pueden cambiar: contenido diferente $\Rightarrow$ valor ha
 	\item Puede clonar un repositorio remoto para obtener su contenido.
 	\item No se pueden ver ramas de repositorios remotos directamente.
 	\item En la primera revisión, git crea una rama de seguimiento.
-	\item Los nuevos cambios se pueden descargar y combinar usando \lstinline|git pull|.
+	\item Los nuevos cambios se pueden descargar y combinar usando \mintinline{console}{git pull}.
 \end{itemize}
 
 \begin{table}[ht!]
@@ -118,27 +120,27 @@ Las confirmaciones no pueden cambiar: contenido diferente $\Rightarrow$ valor ha
 	Comando & Breve descripción
 	\tabularnewline
 	\midrule
-	\lstinline|init| & Crea un repositorio de Git vacío o reinicialice uno existente.
+	\mintinline{console}{init} & Crea un repositorio de Git vacío o reinicialice uno existente.
 	\tabularnewline
-	\lstinline|clone| & Clona un repositorio en un nuevo directorio.
+	\mintinline{console}{clone} & Clona un repositorio en un nuevo directorio.
 	\tabularnewline
-	\lstinline|add| & Agrega contenido del archivo al índice.
+	\mintinline{console}{add} & Agrega contenido del archivo al índice.
 	\tabularnewline
-	\lstinline|commit| & Registra los cambios en el repositorio.
+	\mintinline{console}{commit} & Registra los cambios en el repositorio.
 	\tabularnewline
-	\lstinline|log| & Muestra registros de confirmación.
+	\mintinline{console}{log} & Muestra registros de confirmación.
 	\tabularnewline
-	\lstinline|diff| & Muestra cambios entre confirmaciones, confirmación y árbol de trabajo, etc.
+	\mintinline{console}{diff} & Muestra cambios entre confirmaciones, confirmación y árbol de trabajo, etc.
 	\tabularnewline
-	\lstinline|branch| & Enumera, crea o elimina ramas.
+	\mintinline{console}{branch} & Enumera, crea o elimina ramas.
 	\tabularnewline
-	\lstinline|checkout| & Cambia ramas o restaura archivos de árbol de trabajo.
+	\mintinline{console}{checkout} & Cambia ramas o restaura archivos de árbol de trabajo.
 	\tabularnewline
-	\lstinline|merge|& Une dos o más historias de desarrollo juntas.
+	\mintinline{console}{merge} & Une dos o más historias de desarrollo juntas.
 	\tabularnewline
-	\lstinline|pull| & Obtenga e integre con otro repositorio o una sucursal local.
+	\mintinline{console}{pull} & Obtenga e integre con otro repositorio o una sucursal local.
 	\tabularnewline
-	\lstinline|push| & Actualiza las referencias remotas junto con los objetos asociados.
+	\mintinline{console}{push} & Actualiza las referencias remotas junto con los objetos asociados.
 	\tabularnewline
 	\bottomrule
 	\end{tabular}
@@ -178,7 +180,7 @@ Escribir tu propio sistema de construcción es aburrido y tedioso.
 
 Makefiles escritos a mano
 
-Los desarrolladores especifican los objetivos y sus reglas de compilación.
+Los desarrolladores de software especifican los objetivos y sus reglas de compilación.
 
 Si escribió sus reglas correctamente, make asegura que solo se vuelvan a compilar los archivos de origen necesarios.
 

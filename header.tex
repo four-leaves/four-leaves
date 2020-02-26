@@ -7,6 +7,7 @@
 \usepackage[english, spanish,es-sloppy]{babel}
 \selectlanguage{spanish}
 \spanishdatedel
+\usepackage{csquotes}
 
 \usepackage{tasks}
 \usepackage{ifluatex}
@@ -25,6 +26,7 @@
 \usepackage{graphicx}
 	\graphicspath{ {img} }
 
+\usepackage{minted}
 \usepackage{svg}
 \usepackage{booktabs}
 %\usepackage{longtable}
@@ -33,29 +35,27 @@
 \usepackage{wrapfig}
 \usepackage{lipsum}
 
-%\usepackage{titlesec}
 \KOMAoptions{toc=chapterentrydotfill}
 
-\usepackage{listings}
-\usepackage{lstfiracode} % https://ctan.org/pkg/lstfiracode
-\lstdefinestyle{cpp}{
-	language=C++,
-	style=FiraCodeStyle,   % Use predefined FiraCodeStyle
-	basicstyle=\ttfamily,   % Use \ttfamily for source code listings
-	commentstyle=\color{orange},
-	tabsize=2,
-	moreliterate=
-	{;;}{{;;}}2
-	{///}{{///}}3
-}
-\lstdefinestyle{bash}{
-	language=bash,
-	style=FiraCodeStyle,
-	basicstyle=\footnotesize\ttfamily,
-	showstringspaces=false,
-	tabsize=2
-}
-\newcommand*\lstinputpath[1]{\lstset{inputpath=#1}}
+%\usepackage{lstfiracode} % https://ctan.org/pkg/lstfiracode
+%\lstdefinestyle{cpp}{
+%	language=C++,
+%	style=FiraCodeStyle,   % Use predefined FiraCodeStyle
+%	basicstyle=\ttfamily,   % Use \ttfamily for source code listings
+%	commentstyle=\color{orange},
+%	tabsize=2,
+%	moreliterate=
+%	{;;}{{;;}}2
+%	{///}{{///}}3
+%}
+%\lstdefinestyle{bash}{
+%	language=bash,
+%	style=FiraCodeStyle,
+%	basicstyle=\footnotesize\ttfamily,
+%	showstringspaces=false,
+%	tabsize=2
+%}
+%\newcommand*\lstinputpath[1]{\lstset{inputpath=#1}}
 
 \usepackage[
 	backend = biber,
@@ -67,14 +67,21 @@
 ]{biblatex}
 \addbibresource{04_backmatter/references.bib}
 
-\usepackage[
+\usepackage{hyperref} % Hipervínculos
+
+\hypersetup{
 	pdfencoding=auto,
-	colorlinks,
+	colorlinks=true,
 	citecolor=blue,
 	linkcolor=red,
 	pdfpagelabels
-]{hyperref}% Hipervínculos
+}
 
+% Since menukeys uses catoptions, which does some heavy changes on key-value
+% options, it is recommended to load menukeys as the last package (even after
+% hyperref)!
+\usepackage[hyperrefcolorlinks,os=mac,mackeys=symbols]{menukeys}
+\renewmenumacro{\keys}[+]{shadowedroundedkeys}
 
 \renewcommand{\spanishchaptername}{Título}
 \renewcommand{\spanishcontentsname}{Contenido}

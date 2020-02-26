@@ -5,11 +5,11 @@
 % arara: --> }
 % arara: lualatex: { shell: yes }
 % arara: biber
-%! arara: lualatex: {
-%! arara: --> shell: yes,
-%! arara: --> synctex: yes,
-%! arara: --> interaction: batchmode
-%! arara: --> }
+% arara: lualatex: {
+% arara: --> shell: yes,
+% arara: --> synctex: yes,
+% arara: --> interaction: batchmode
+% arara: --> }
 % arara: lualatex: { shell: true, interaction: nonstopmode }
 % arara: clean: {
 % arara: --> extensions:
@@ -20,8 +20,6 @@
 \input{header} % packages, shortcuts, page format etc.
 
 \begin{document}
-
-\nocite{*} % cite all the references
 
 \hypersetup{pageanchor=false}
 \frontmatter

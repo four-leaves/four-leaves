@@ -7,7 +7,7 @@
 \end{wrapfigure}
 \lipsum[1]
 
-	\lstinline[language=TeX]!article! and \texttt{book} classes as well as to \texttt{report} class. In \texttt{article} class, however, the default position for the title information is at the top of the first text page rather than on a separate page. Also, it is not usual to request a table  \texttt{article} class.
+	\mintinline{latex}{article} and \mintinline{latex}{book} classes as well as to \mintinline{latex}{report} class. In \mintinline{latex}{article} class, however, the default position for the title information is at the top of the first text page rather than on a separate page. Also, it is not usual to request a table \mintinline{latex}{article} class.
 \section{Subtítulo}
 
 Los siguientes comandos de sección están disponibles:
@@ -91,51 +91,51 @@ Pero tenga en cuenta que  a diferencia de las clases de \texttt{book} y \texttt{
 	\includegraphics[width=0.2\paperwidth]{./img/linux/manjaro}
 \end{figure}
 
-\begin{landscape}
-\begin{table}[ht!]
-	\caption{Comparación de la línea de comando del gestión de software (fuente: \url{wiki.archlinux.org})}
-	\centering
-	\begin{tabular}{@{} p{110pt}:p{100pt}:l:p{102pt}:l @{}}
-		\toprule
-		Acción & Arch & Red Hat/Fedora & Debian/Ubuntu & SLES/openSUSE
-		\tabularnewline
-		\midrule
-		Instala un paquete por su nombre. & \lstinline|pacman -S| & \lstinline|dnf install| & \lstinline|apt install| & \lstinline|zypper install|
-		\tabularnewline
-		Elimina un paquete por su nombre. & \lstinline|pacman -Rs| & \lstinline|dnf remove| & \lstinline|apt remove| & \lstinline|zypper remove|
-		\tabularnewline
-		Busca un paquete por su nombre. & \lstinline|pacman -Ss| & \lstinline|dnf search| & \lstinline|apt search| & \lstinline|zypper search|
-		\tabularnewline
-		Actualiza los paquetes. & \lstinline|pacman -Syu| & \lstinline|dnf upgrade| & \lstinline|apt update &&|\newline \lstinline|apt upgrade| & \lstinline|zypper update|
-		\tabularnewline
-		Limpia la memoria\newline caché local. & \lstinline|pacman -Scc| & \lstinline|dnf clean all| & \lstinline|apt autoclean| & \lstinline|zypper clean|
-		\tabularnewline
-		Elimina dependencias innecesarias. & \lstinline|pacman -Rsn|\newline \lstinline|$(pacman -Qdtq)| & \lstinline|dnf autoremove| & \lstinline|apt autoremove| & \lstinline|zypper rm -u|
-		\tabularnewline
-		Muestra información\newline sobre un paquete. & \lstinline|pacman -Si| & \lstinline|dnf info| & \lstinline|apt show| & \lstinline|zypper info|
-		\tabularnewline
-		Lista de paquetes\newline instalados. & \lstinline|pacman -Q| & \lstinline|dnf list installed| & \lstinline|apt list --installed| & \lstinline|zypper search|\newline \lstinline|--installed-only|
-		\tabularnewline
-		Registra las acciones tomadas por el gestor de software. & \lstinline|/var/log/pacman.log| & \lstinline|dnf history| & \lstinline|/var/log/dpkg.log| & \lstinline|/var/log/zypp/history|
-		\tabularnewline
-		\bottomrule
-	\end{tabular}
-\end{table}
-\end{landscape}
+%\begin{landscape}
+%\begin{table}[ht!]
+%	\caption{Comparación de la línea de comando del gestión de software (fuente: \url{wiki.archlinux.org})}
+%	\centering
+%	\begin{tabular}{@{} p{110pt}:p{100pt}:l:p{102pt}:l @{}}
+%		\toprule
+%		Acción & Arch & Red Hat/Fedora & Debian/Ubuntu & SLES/openSUSE
+%		\tabularnewline
+%		\midrule
+%		Instala un paquete por su nombre. & \lstinline|pacman -S| & \lstinline|dnf install| & \lstinline|apt install| & \lstinline|zypper install|
+%		\tabularnewline
+%		Elimina un paquete por su nombre. & \lstinline|pacman -Rs| & \lstinline|dnf remove| & \lstinline|apt remove| & \lstinline|zypper remove|
+%		\tabularnewline
+%		Busca un paquete por su nombre. & \lstinline|pacman -Ss| & \lstinline|dnf search| & \lstinline|apt search| & \lstinline|zypper search|
+%		\tabularnewline
+%		Actualiza los paquetes. & \lstinline|pacman -Syu| & \lstinline|dnf upgrade| & \lstinline|apt update &&|\newline \lstinline|apt upgrade| & \lstinline|zypper update|
+%		\tabularnewline
+%		Limpia la memoria\newline caché local. & \lstinline|pacman -Scc| & \lstinline|dnf clean all| & \lstinline|apt autoclean| & \lstinline|zypper clean|
+%		\tabularnewline
+%		Elimina dependencias innecesarias. & \lstinline|pacman -Rsn|\newline \lstinline|$(pacman -Qdtq)| & \lstinline|dnf autoremove| & \lstinline|apt autoremove| & \lstinline|zypper rm -u|
+%		\tabularnewline
+%		Muestra información\newline sobre un paquete. & \lstinline|pacman -Si| & \lstinline|dnf info| & \lstinline|apt show| & \lstinline|zypper info|
+%		\tabularnewline
+%		Lista de paquetes\newline instalados. & \lstinline|pacman -Q| & \lstinline|dnf list installed| & \lstinline|apt list --installed| & \lstinline|zypper search|\newline \lstinline|--installed-only|
+%		\tabularnewline
+%		Registra las acciones tomadas por el gestor de software. & \lstinline|/var/log/pacman.log| & \lstinline|dnf history| & \lstinline|/var/log/dpkg.log| & \lstinline|/var/log/zypp/history|
+%		\tabularnewline
+%		\bottomrule
+%	\end{tabular}
+%\end{table}
+%\end{landscape}
 
-\begin{lstlisting}[style=cpp]
-// Hello.cpp
-#include <iostream>
-
-int main()
-{
-	std::cout << "Four leaves.\n";
-
-	return 0;
-}
-\end{lstlisting}
-
-\begin{lstlisting}[style=bash]
-#!/usr/bin/bash
-echo $SHELL
-\end{lstlisting}
+%\begin{lstlisting}[style=cpp]
+%// Hello.cpp
+%#include <iostream>
+%
+%int main()
+%{
+%	std::cout << "Four leaves.\n";
+%
+%	return 0;
+%}
+%\end{lstlisting}
+%
+%\begin{lstlisting}[style=bash]
+%#!/usr/bin/bash
+%echo $SHELL
+%\end{lstlisting}
